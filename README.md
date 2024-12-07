@@ -120,8 +120,38 @@ Testing the webserver.
         </table>   
 </body>
 </html>
+
+#views.py
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request received...")
+        self.send_response(200)
+        self.send_header("content-type","text/html")
+        self.end_headers()
+        self.wfile.write(content.encode())
+print("This is my webserver")
+server_address=('',8000)
+httpd= HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+
+#urls.py
+from django.contrib import admin 
+from django.urls import path
+from app.views import MyServer
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # path('new/',views.trial),
+    # path('page/',views.slot),
+    path('server/',MyServer.as_view()),
+    
+]
+
  ```        
 # OUTPUT:
+![Screenshot (67)](https://github.com/user-attachments/assets/71044da0-aef0-4b22-b2ce-d48db91b6149)
+
+
 ![Screenshot (45)](https://github.com/user-attachments/assets/b420267c-dc73-4891-a1de-98b96e8425d8)
 
           
