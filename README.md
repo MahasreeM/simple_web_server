@@ -1,6 +1,6 @@
 # EX01 Developing a Simple Webserver
 
-# Date:07-10-2024
+# Date:17-09-2024
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -21,7 +21,8 @@ Serving the HTML pages.
 Testing the webserver.
 
 # PROGRAM:
-  ```<!DOCTYPE html>
+  ```
+  <!DOCTYPE html>
   <html lang="en">
   <head>
        <meta charset="UTF-8">
